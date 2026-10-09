@@ -12,10 +12,15 @@ const hearts = Array.from({ length: 14 }, (_, i) => ({
 const audioPlayer = ref<HTMLAudioElement | null>(null);
 const avisoVisivel = ref(true);
 
-const tocarAudio = () => {
+const tocarAudio = async () => {
   if (!audioPlayer.value) return;
-  audioPlayer.value.play();
-  avisoVisivel.value = false;
+
+  try {
+    await audioPlayer.value.play();
+    avisoVisivel.value = false;
+  } catch (err) {
+    console.warn('Não foi possível tocar o áudio:', err);
+  }
 };
 
 const timelineItems = [
