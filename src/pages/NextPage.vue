@@ -35,7 +35,10 @@ const timelineItems = [
   { title: 'Nós', subtitle: 'Hoje', text: 'Bom, com todo esse texto você percebeu que talvez eu seja um pouco emocionado KKKKKKK, brincadeiras a parte eu só sei que quero te ver mais e mais a cada dia que passa, cada dia que passa quero deitar nesse teu abraço, rir com você, compartilhar as coisas com você, apoiar você e ser alguém que te ajuda, te admira, te encanta todos os dias. Quero ser aquele que te faz rir com uma atitude besta quando você estiver triste, aquele que ouvirá tudo o que aconteceu de estressante no seu dia, aquele que te acalma, aquele que te da mais um motivo pra viver. Aquele que chora contigo como um bebê, brinca contigo como se fossem crianças, ouve e compreende como adulto, e aquele que ama como um idoso, amando até o final de sua vida, com isso eu queria perguntar...' },
 ];
 
-const imageList = Array.from({ length: 9 }, (_, i) => `/images/image${i + 1}.png`);
+const imageList = Array.from(
+  { length: 9 },
+  (_, i) => `${import.meta.env.BASE_URL}images/image${i + 1}.png`
+);
 
 const temas = ['morango', 'limao'];
 const temaDoItem = (i: number) => temas[i % 2];
